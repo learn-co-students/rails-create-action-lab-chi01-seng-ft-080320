@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "💣Destroying old data"
+Student.destroy_all
+
+puts "Seeding students"
+8.times do 
+  Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name )
+end 
+
+
+puts "done"
